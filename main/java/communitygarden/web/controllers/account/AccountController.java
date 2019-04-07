@@ -21,8 +21,8 @@ import org.springframework.validation.Errors;
 
 import communitygarden.datamodel.account.*;
 
-@Controller
-@RequestMapping("/account")
+@Controller /** Found via {@link WebConfig} ComponentScan */
+@RequestMapping("/a") /** No one wants to have to type out 'account' */
 public class AccountController {
 	
 //	private AccountRepository accountRepository;
@@ -33,7 +33,7 @@ public class AccountController {
 	{	
 		// Return the view named '/WEB-INF/views/registerForm.jsp'
 		model.addAttribute( new Account() );
-		return "account/registerForm";
+		return "a/registerForm"; // src\main\webapp\WEB-INF\views\account\registerForm.jsp
 	}
 	
 	@PostMapping(value = "/register")
@@ -43,12 +43,12 @@ public class AccountController {
 		if ( errors.hasErrors() )
 		{
 			System.out.println("ERROR: " + errors.toString());
-			return "account/registerForm";
+			return "account/registerForm"; // src\main\webapp\WEB-INF\views\account\registerForm.jsp
 		}
 		
 		accounts.add(account);
 		
-		return "redirect:/account/" + account.getAccountName();
+		return "redirect:/a/" + account.getAccountName();
 	}
 	
 	@GetMapping(value="/{accountName}")
@@ -59,6 +59,7 @@ public class AccountController {
 		
 		model.addAttribute(account);
 		
-		return "account/profile";
+		return "a/profile"; // src\main\webapp\WEB-INF\views\account\profile.jsp
+		
 	}
 }

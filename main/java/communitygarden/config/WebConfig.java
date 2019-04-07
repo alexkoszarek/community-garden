@@ -28,11 +28,12 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  
 @Configuration
 @EnableWebMvc
-@ComponentScan("communitygarden.web")
+@ComponentScan("communitygarden.web") // Will scan communitygarden.web for @Controller classes
 public class WebConfig implements WebMvcConfigurer{
 
 	@Bean
 	public ViewResolver viewResolver() {
+		// Configure JSP view resolver
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
 		resolver.setPrefix("/WEB-INF/views/");
 		resolver.setSuffix(".jsp");
@@ -40,7 +41,8 @@ public class WebConfig implements WebMvcConfigurer{
 		return resolver;
 	}
 	
-	public void configureDefaultServletHandling( DefaultServletHandlerConfigurer configurer ) {
+	@Override
+	public void configureDefaultServletHandling( DefaultServletHandlerConfigurer configurer ) { // Configure static handling
 		configurer.enable();
 	}
 

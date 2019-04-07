@@ -61,6 +61,7 @@ public class Account {
 		this.bio = bio;
 	}
 	public int getAccountId() {
+		// TODO: Hook into DB w/ a sequence
 		return ((int)Math.random() *1000);
 	}
 	public void setAccountId(int accountId) {
