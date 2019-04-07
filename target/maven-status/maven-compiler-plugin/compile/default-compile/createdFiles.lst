@@ -1,9 +1,0 @@
-communitygarden\forms\Initializer.class
-communitygarden\datamodel\account\Account.class
-communitygarden\web\controllers\account\AccountController.class
-communitygarden\web\controllers\HomeController.class
-communitygarden\datamodel\assets\Asset.class
-communitygarden\CommunityGardenWebAppInitializer.class
-communitygarden\forms\Authenticator.class
-communitygarden\config\WebConfig.class
-communitygarden\config\RootConfig.class
