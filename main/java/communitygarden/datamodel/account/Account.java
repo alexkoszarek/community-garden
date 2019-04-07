@@ -61,7 +61,10 @@ public class Account {
 		this.bio = bio;
 	}
 	public int getAccountId() {
+<<<<<<< HEAD
 		// TODO: Hook into DB w/ a sequence
+=======
+>>>>>>> 40bed8515c779a417ca0647465343aee1af6e978
 		return ((int)Math.random() *1000);
 	}
 	public void setAccountId(int accountId) {

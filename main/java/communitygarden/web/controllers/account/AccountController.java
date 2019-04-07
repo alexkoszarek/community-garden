@@ -21,8 +21,13 @@ import org.springframework.validation.Errors;
 
 import communitygarden.datamodel.account.*;
 
+<<<<<<< HEAD
 @Controller /** Found via {@link WebConfig} ComponentScan */
 @RequestMapping("/a") /** No one wants to have to type out 'account' */
+=======
+@Controller
+@RequestMapping("/account")
+>>>>>>> 40bed8515c779a417ca0647465343aee1af6e978
 public class AccountController {
 	
 //	private AccountRepository accountRepository;
@@ -33,7 +38,11 @@ public class AccountController {
 	{	
 		// Return the view named '/WEB-INF/views/registerForm.jsp'
 		model.addAttribute( new Account() );
+<<<<<<< HEAD
 		return "a/registerForm"; // src\main\webapp\WEB-INF\views\account\registerForm.jsp
+=======
+		return "account/registerForm";
+>>>>>>> 40bed8515c779a417ca0647465343aee1af6e978
 	}
 	
 	@PostMapping(value = "/register")
@@ -43,12 +52,20 @@ public class AccountController {
 		if ( errors.hasErrors() )
 		{
 			System.out.println("ERROR: " + errors.toString());
+<<<<<<< HEAD
 			return "account/registerForm"; // src\main\webapp\WEB-INF\views\account\registerForm.jsp
+=======
+			return "account/registerForm";
+>>>>>>> 40bed8515c779a417ca0647465343aee1af6e978
 		}
 		
 		accounts.add(account);
 		
+<<<<<<< HEAD
 		return "redirect:/a/" + account.getAccountName();
+=======
+		return "redirect:/account/" + account.getAccountName();
+>>>>>>> 40bed8515c779a417ca0647465343aee1af6e978
 	}
 	
 	@GetMapping(value="/{accountName}")
@@ -59,7 +76,11 @@ public class AccountController {
 		
 		model.addAttribute(account);
 		
+<<<<<<< HEAD
 		return "a/profile"; // src\main\webapp\WEB-INF\views\account\profile.jsp
 		
+=======
+		return "account/profile";
+>>>>>>> 40bed8515c779a417ca0647465343aee1af6e978
 	}
 }
